@@ -10,30 +10,33 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            // Здесь можно поместить иконку или другую информацию
+            
             Image(systemName: "key.horizontal.fill")
                 .imageScale(.large)
-                .foregroundColor(.blue)
+                .foregroundColor(.white)
+                .font(.system(size: 25))
                 .padding()
             
-            // Текст, который будет отображаться
+           
             Text("Password Generator")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding()
-                .foregroundColor(.black)
+                .foregroundColor(.white)
 
-            Text("Click on the menu bar icon to generate a password.")
-                .font(.body)
+            Text("Navigate to menu bar and click on key icon to generate password")
+                .font(.system(size: 14))
                 .padding()
-                .foregroundColor(.black)
+                .foregroundColor(.white)
 
-            Spacer()  // Чтобы элементы не прижимались к верхней части экрана
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.)  // Белый фон
-        .cornerRadius(20)  // Сглаженные углы
-        .padding()  // Отступы
+        .background(
+                   LinearGradient(gradient: Gradient(colors: [.blue, Color("Violet")]), startPoint: .top, endPoint: .bottom)
+               )
+        .cornerRadius(20)
+        .padding()
         .font(.title)
     }
 }

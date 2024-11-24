@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		9A536A812CF2E0F500AB88A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A536A672CF2E0F200AB88A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A536A6E2CF2E0F200AB88A2;
+			remoteInfo = GenPass;
+		};
+		9A536A8B2CF2E0F500AB88A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A536A672CF2E0F200AB88A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A536A6E2CF2E0F200AB88A2;
+			remoteInfo = GenPass;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9A536A6F2CF2E0F200AB88A2 /* GenPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A536A802CF2E0F500AB88A2 /* GenPassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenPassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A536A8A2CF2E0F500AB88A2 /* GenPassUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenPassUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		9A536A712CF2E0F200AB88A2 /* GenPass */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = GenPass;
+			sourceTree = "<group>";
+		};
+		9A536A832CF2E0F500AB88A2 /* GenPassTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = GenPassTests;
+			sourceTree = "<group>";
+		};
+		9A536A8D2CF2E0F500AB88A2 /* GenPassUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = GenPassUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A536A6C2CF2E0F200AB88A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A536A7D2CF2E0F500AB88A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A536A872CF2E0F500AB88A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A536A662CF2E0F200AB88A2 = {
+			isa = PBXGroup;
+			children = (
+				9A536A712CF2E0F200AB88A2 /* GenPass */,
+				9A536A832CF2E0F500AB88A2 /* GenPassTests */,
+				9A536A8D2CF2E0F500AB88A2 /* GenPassUITests */,
+				9A536A702CF2E0F200AB88A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A536A702CF2E0F200AB88A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A536A6F2CF2E0F200AB88A2 /* GenPass.app */,
+				9A536A802CF2E0F500AB88A2 /* GenPassTests.xctest */,
+				9A536A8A2CF2E0F500AB88A2 /* GenPassUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A536A6E2CF2E0F200AB88A2 /* GenPass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A536A942CF2E0F500AB88A2 /* Build configuration list for PBXNativeTarget "GenPass" */;
+			buildPhases = (
+				9A536A6B2CF2E0F200AB88A2 /* Sources */,
+				9A536A6C2CF2E0F200AB88A2 /* Frameworks */,
+				9A536A6D2CF2E0F200AB88A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				9A536A712CF2E0F200AB88A2 /* GenPass */,
+			);
+			name = GenPass;
+			packageProductDependencies = (
+			);
+			productName = GenPass;
+			productReference = 9A536A6F2CF2E0F200AB88A2 /* GenPass.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A536A7F2CF2E0F500AB88A2 /* GenPassTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A536A972CF2E0F500AB88A2 /* Build configuration list for PBXNativeTarget "GenPassTests" */;
+			buildPhases = (
+				9A536A7C2CF2E0F500AB88A2 /* Sources */,
+				9A536A7D2CF2E0F500AB88A2 /* Frameworks */,
+				9A536A7E2CF2E0F500AB88A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A536A822CF2E0F500AB88A2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9A536A832CF2E0F500AB88A2 /* GenPassTests */,
+			);
+			name = GenPassTests;
+			packageProductDependencies = (
+			);
+			productName = GenPassTests;
+			productReference = 9A536A802CF2E0F500AB88A2 /* GenPassTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9A536A892CF2E0F500AB88A2 /* GenPassUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A536A9A2CF2E0F500AB88A2 /* Build configuration list for PBXNativeTarget "GenPassUITests" */;
+			buildPhases = (
+				9A536A862CF2E0F500AB88A2 /* Sources */,
+				9A536A872CF2E0F500AB88A2 /* Frameworks */,
+				9A536A882CF2E0F500AB88A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A536A8C2CF2E0F500AB88A2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9A536A8D2CF2E0F500AB88A2 /* GenPassUITests */,
+			);
+			name = GenPassUITests;
+			packageProductDependencies = (
+			);
+			productName = GenPassUITests;
+			productReference = 9A536A8A2CF2E0F500AB88A2 /* GenPassUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A536A672CF2E0F200AB88A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					9A536A6E2CF2E0F200AB88A2 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					9A536A7F2CF2E0F500AB88A2 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 9A536A6E2CF2E0F200AB88A2;
+					};
+					9A536A892CF2E0F500AB88A2 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 9A536A6E2CF2E0F200AB88A2;
+					};
+				};
+			};
+			buildConfigurationList = 9A536A6A2CF2E0F200AB88A2 /* Build configuration list for PBXProject "GenPass" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A536A662CF2E0F200AB88A2;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9A536A702CF2E0F200AB88A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A536A6E2CF2E0F200AB88A2 /* GenPass */,
+				9A536A7F2CF2E0F500AB88A2 /* GenPassTests */,
+				9A536A892CF2E0F500AB88A2 /* GenPassUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A536A6D2CF2E0F200AB88A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A536A7E2CF2E0F500AB88A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A536A882CF2E0F500AB88A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A536A6B2CF2E0F200AB88A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A536A7C2CF2E0F500AB88A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A536A862CF2E0F500AB88A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A536A822CF2E0F500AB88A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A536A6E2CF2E0F200AB88A2 /* GenPass */;
+			targetProxy = 9A536A812CF2E0F500AB88A2 /* PBXContainerItemProxy */;
+		};
+		9A536A8C2CF2E0F500AB88A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A536A6E2CF2E0F200AB88A2 /* GenPass */;
+			targetProxy = 9A536A8B2CF2E0F500AB88A2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9A536A922CF2E0F500AB88A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A536A932CF2E0F500AB88A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		9A536A952CF2E0F500AB88A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = GenPass/GenPass.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GenPass/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.GenPass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9A536A962CF2E0F500AB88A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = GenPass/GenPass.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GenPass/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.GenPass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9A536A982CF2E0F500AB88A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.GenPassTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GenPass.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GenPass";
+			};
+			name = Debug;
+		};
+		9A536A992CF2E0F500AB88A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.GenPassTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GenPass.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GenPass";
+			};
+			name = Release;
+		};
+		9A536A9B2CF2E0F500AB88A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.GenPassUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = GenPass;
+			};
+			name = Debug;
+		};
+		9A536A9C2CF2E0F500AB88A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.GenPassUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = GenPass;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A536A6A2CF2E0F200AB88A2 /* Build configuration list for PBXProject "GenPass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A536A922CF2E0F500AB88A2 /* Debug */,
+				9A536A932CF2E0F500AB88A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A536A942CF2E0F500AB88A2 /* Build configuration list for PBXNativeTarget "GenPass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A536A952CF2E0F500AB88A2 /* Debug */,
+				9A536A962CF2E0F500AB88A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A536A972CF2E0F500AB88A2 /* Build configuration list for PBXNativeTarget "GenPassTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A536A982CF2E0F500AB88A2 /* Debug */,
+				9A536A992CF2E0F500AB88A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A536A9A2CF2E0F500AB88A2 /* Build configuration list for PBXNativeTarget "GenPassUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A536A9B2CF2E0F500AB88A2 /* Debug */,
+				9A536A9C2CF2E0F500AB88A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A536A672CF2E0F200AB88A2 /* Project object */;
+}

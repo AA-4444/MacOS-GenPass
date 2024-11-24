@@ -14,6 +14,7 @@ struct SafePassApp: App {
     @State private var includeNumbers: Bool = true
     @State private var includeSpecialChars: Bool = true
     @State private var lastGeneratedPassword: String = ""
+    @State private var passwordHistory: [String] = [] // Store real password history
 
     var body: some Scene {
         MenuBarExtra("Password Generator", systemImage: "key.fill") {
@@ -33,25 +34,61 @@ struct SafePassApp: App {
 
                 Divider()
 
-                //-- Settings section
-                Text("Settings").font(.headline)
+                //-- Password History Section
+                Text("Password History").font(.headline)
 
-                //MARK:  Password length menu
-                Menu("Password Length: \(passwordLength)") {
-                    Button("10") { changePasswordLength(to: 20) }
-                    Button("16") { changePasswordLength(to: 16) }
-                    Button("20") { changePasswordLength(to: 20) }
-                    Button("25") { changePasswordLength(to: 20) }
+                if passwordHistory.isEmpty {
+                    Text("No history yet").font(.subheadline).foregroundColor(.gray)
+                } else {
+                    VStack(spacing: 1) {
+                        ForEach(passwordHistory, id: \.self) { password in
+                            HStack {
+                                Text(password)
+                                    .lineLimit(1)
+                                    .truncationMode(.middle)
+                                    .font(.body)
+                                Spacer()
+                                Button("Copy") {
+                                    copyToClipboard(password)
+                                }
+                                .buttonStyle(BorderlessButtonStyle())
+                                Button("Remove") {
+                                    removePasswordFromHistory(password)
+                                }
+                                .foregroundColor(.red)
+                                .buttonStyle(BorderlessButtonStyle())
+                            }
+                        }
+                    }
                 }
 
-               
+                // Clear all history
+                if !passwordHistory.isEmpty {
+                    Button("Clear All History") {
+                        clearAllHistory()
+                    }
+                    .foregroundColor(.red)
+                    .padding(.top, 5)
+                }
+
+                Divider()
+
+                //-- Settings Section
+                Text("Settings").font(.headline)
+
+                Menu("Password Length: \(passwordLength)") {
+                    Button("10") { changePasswordLength(to: 10) }
+                    Button("16") { changePasswordLength(to: 16) }
+                    Button("20") { changePasswordLength(to: 20) }
+                    Button("25") { changePasswordLength(to: 25) }
+                }
+
                 Toggle("Include Uppercase", isOn: $includeUppercase)
                 Toggle("Include Numbers", isOn: $includeNumbers)
                 Toggle("Include Special Characters", isOn: $includeSpecialChars)
 
                 Divider()
 
-               
                 Button("Quit") {
                     NSApplication.shared.terminate(nil)
                 }
@@ -60,12 +97,20 @@ struct SafePassApp: App {
         }
     }
 
-    //MARK: Gen random pass
+    // MARK: Generate Password and add the new pass to history
     func generatePassword() {
         lastGeneratedPassword = generateRandomPassword()
+
+      
+        if !lastGeneratedPassword.isEmpty {
+            passwordHistory.insert(lastGeneratedPassword, at: 0)
+            if passwordHistory.count > 5 {
+                passwordHistory.removeLast()
+            }
+        }
     }
 
-    //MARK: Gen pass based on user selection
+    // MARK: Gen random pass based on user selection
     func generateRandomPassword() -> String {
         var characters = "abcdefghijklmnopqrstuvwxyz"
 
@@ -89,12 +134,12 @@ struct SafePassApp: App {
         return password
     }
 
-    //--  pass length
+    // MARK: Change Pass Length --
     func changePasswordLength(to newLength: Int) {
         passwordLength = newLength
     }
 
-    // Cp pass
+    // MARK: Copy Last Generated Password
     func copyPasswordToClipboard() {
         if !lastGeneratedPassword.isEmpty {
             NSPasteboard.general.clearContents()
@@ -103,5 +148,23 @@ struct SafePassApp: App {
         } else {
             print("No password to copy")
         }
+    }
+
+    func copyToClipboard(_ password: String) {
+        NSPasteboard.general.clearContents()
+        NSPasteboard.general.setString(password, forType: .string)
+        print("Password copied to clipboard: \(password)")
+    }
+
+    // MARK: Remove a Specific Password from History
+    func removePasswordFromHistory(_ password: String) {
+        if let index = passwordHistory.firstIndex(of: password) {
+            passwordHistory.remove(at: index)
+        }
+    }
+
+    
+    func clearAllHistory() {
+        passwordHistory.removeAll()
     }
 }

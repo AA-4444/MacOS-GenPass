@@ -2,7 +2,7 @@
 //  GenPassTests.swift
 //  GenPassTests
 //
-//  Created by Алексей Зарицький on 11/24/24.
+//  Created by Oleksii Zarytskyi on 11/24/24.
 //
 
 import Testing

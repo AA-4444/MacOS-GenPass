@@ -2,7 +2,7 @@
 //  GenPassApp.swift
 //  GenPass
 //
-//  Created by Алексей Зарицький on 11/24/24.
+//  Created by Oleksii Zarytskyi on 11/24/24.
 //
 import SwiftUI
 import Cocoa
@@ -25,10 +25,28 @@ struct SafePassApp: App {
                 }
                 .keyboardShortcut("G")
 
-                //-- Copy password button
-                Button("Copy Password: \(lastGeneratedPassword.isEmpty ? "None" : lastGeneratedPassword)") {
+               
+                
+                
+                Button(action: {
                     copyPasswordToClipboard()
+                }) {
+                    HStack {
+                       
+                        Image(systemName: "arrow.right.doc.on.clipboard")
+                            .foregroundColor(.green)
+                        
+                       
+                        Text("\(lastGeneratedPassword.isEmpty ? "None" : lastGeneratedPassword)")
+                            .lineLimit(1)
+                            .truncationMode(.middle)
+                            .foregroundColor(.green)
+                    }
+                    .padding(.vertical, 5)
+                    .buttonStyle(BorderlessButtonStyle())
+                    
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .disabled(lastGeneratedPassword.isEmpty)
                 .keyboardShortcut("C")
 
@@ -40,29 +58,42 @@ struct SafePassApp: App {
                 if passwordHistory.isEmpty {
                     Text("No history yet").font(.subheadline).foregroundColor(.gray)
                 } else {
-                    VStack(spacing: 1) {
+                    VStack(spacing: 2) {
                         ForEach(passwordHistory, id: \.self) { password in
-                            HStack {
-                                Text(password)
-                                    .lineLimit(1)
-                                    .truncationMode(.middle)
-                                    .font(.body)
-                                Spacer()
-                                Button("Copy") {
-                                    copyToClipboard(password)
+                            Button(action: {
+                                copyToClipboard(password)
+                            }) {
+                                HStack {
+                                  
+                                    Image(systemName: "arrow.right.doc.on.clipboard")
+                                        .foregroundColor(.green)
+                                    
+                                    
+                                    Text(password)
+                                        .lineLimit(1)
+                                        .truncationMode(.middle)
+                                        .foregroundColor(.green)
                                 }
-                                .buttonStyle(BorderlessButtonStyle())
-                                Button("Remove") {
-                                    removePasswordFromHistory(password)
-                                }
-                                .foregroundColor(.red)
+                                .padding(.vertical, 5)
                                 .buttonStyle(BorderlessButtonStyle())
                             }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                            // Remove button for the password
+                            Button(action: {
+                                removePasswordFromHistory(password)
+                            }) {
+                                Text("Delete")
+                                    .foregroundColor(.red)
+                                    .font(.system(size: 12))
+                                    .fontWeight(.semibold)
+                            }
+                            .buttonStyle(BorderlessButtonStyle())
                         }
                     }
                 }
 
-                // Clear all history
+                // Clear all history button
                 if !passwordHistory.isEmpty {
                     Button("Clear All History") {
                         clearAllHistory()
@@ -101,7 +132,6 @@ struct SafePassApp: App {
     func generatePassword() {
         lastGeneratedPassword = generateRandomPassword()
 
-      
         if !lastGeneratedPassword.isEmpty {
             passwordHistory.insert(lastGeneratedPassword, at: 0)
             if passwordHistory.count > 5 {
@@ -163,7 +193,6 @@ struct SafePassApp: App {
         }
     }
 
-    
     func clearAllHistory() {
         passwordHistory.removeAll()
     }

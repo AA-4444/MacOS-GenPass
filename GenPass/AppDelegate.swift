@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  GenPass
 //
-//  Created by Алексей Зарицький on 11/24/24.
+//  Created by Oleksii Zarytskyi on 11/24/24.
 //
 
 import Cocoa
@@ -66,7 +66,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         specialCharsItem.target = self
         menu.addItem(specialCharsItem)
 
-        // Quit item
+        
         let quitItem = NSMenuItem(title: "Quit", action: #selector(quitApp), keyEquivalent: "q")
         quitItem.target = self
         menu.addItem(quitItem)
@@ -74,27 +74,27 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         statusBarItem.menu = menu
     }
 
-    // Create macOS-style toggle (iOS-like green switch)
+    
     func createMacOSToggle(title: String, state: Bool) -> NSMenuItem {
         let toggleItem = NSMenuItem(title: title, action: nil, keyEquivalent: "")
         
-        // Create an NSButton (checkbox) for the toggle
+        
         let button = NSButton(checkboxWithTitle: title, target: self, action: #selector(toggleSwitch))
         button.state = state ? .on : .off
         button.isBordered = false
         button.font = .systemFont(ofSize: 13)
         
-        // Set the button type to 'switch' for a native toggle appearance
-        button.setButtonType(.switch)  // This gives it the standard macOS toggle look
         
-        // Remove tintColor customization, as it's not applicable for NSButton
-        button.sizeToFit()  // Fit to text size
+        button.setButtonType(.switch)
+        
+      
+        button.sizeToFit()
         
         toggleItem.view = button
         return toggleItem
     }
 
-    // Handle toggling
+   
     @objc func toggleSwitch(sender: NSButton) {
         if sender.title == "Include Uppercase" {
             includeUppercase.toggle()
@@ -103,23 +103,23 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         } else if sender.title == "Include Special Characters" {
             includeSpecialChars.toggle()
         }
-        updateMenuItemTitles() // Update titles dynamically
+        updateMenuItemTitles()
     }
 
-    // Change Password Length
+    
     @objc func changePasswordLength() {
-        passwordLength = (passwordLength == 16) ? 20 : 16 // Toggle between 16 and 20 for simplicity
-        updateMenuItemTitles() // Update only the password length title
+        passwordLength = (passwordLength == 16) ? 20 : 16
+        updateMenuItemTitles()
     }
 
-    // Generate Password function
+   
     @objc func generatePassword() {
         lastGeneratedPassword = generateRandomPassword()
         copyPasswordItem.title = "Copy Password: \(lastGeneratedPassword)"
         copyPasswordItem.isEnabled = true
     }
 
-    // Generate random password based on user settings
+    
     func generateRandomPassword() -> String {
         var characters = "abcdefghijklmnopqrstuvwxyz"
         
@@ -152,16 +152,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         }
     }
 
-    // Quit app
+   
     @objc func quitApp() {
         NSApplication.shared.terminate(nil)
     }
 
-    // Update Menu Item Titles Dynamically (Only updates relevant titles)
+    
     func updateMenuItemTitles() {
         guard let menu = statusBarItem.menu else { return }
         
-        // Update the settings dynamically
+       
         for item in menu.items {
             if item.title.contains("Password Length") {
                 item.title = "Password Length: \(passwordLength)"
@@ -177,7 +177,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.setActivationPolicy(.regular)
-        setupMenuBar() // Set up the menu bar initially
+        setupMenuBar() 
     }
 
     func applicationWillTerminate(_ notification: Notification) {

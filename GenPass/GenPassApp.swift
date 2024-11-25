@@ -25,7 +25,7 @@ class AppState: ObservableObject {
     @Published var passwordHistory: [String] = []
 
     func generatePassword() {
-        let password = generateRandomPassword()
+        let password = generateRandomNicePassword()
         lastGeneratedPassword = password
 
         if !password.isEmpty {
@@ -39,37 +39,72 @@ class AppState: ObservableObject {
         }
     }
 
-    func generateRandomPassword() -> String {
-        var characters = "abcdefghijklmnopqrstuvwxyz"
-
+    func generateRandomNicePassword() -> String {
+        guard passwordLength > 0 else { return "" }
+        
+        var availableCharacters = "abcdefghijklmnopqrstuvwxyz"
+        var mandatoryCharacters: [Character] = []
+        
+       
+        var rng = SystemRandomNumberGenerator()
+        
+       
         if includeUppercase {
-            characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            availableCharacters += uppercase
+            if let char = randomCharacter(from: uppercase, using: &rng) {
+                mandatoryCharacters.append(char)
+            }
         }
+        
+       
         if includeNumbers {
-            characters += "0123456789"
+            let numbers = "0123456789"
+            availableCharacters += numbers
+            if let char = randomCharacter(from: numbers, using: &rng) {
+                mandatoryCharacters.append(char)
+            }
         }
+        
+       
         if includeSpecialChars {
-            characters += "!@#$%^&*()"
+            let specialCharacters = "!@#$%^&*()"
+            availableCharacters += specialCharacters
+            if let char = randomCharacter(from: specialCharacters, using: &rng) {
+                mandatoryCharacters.append(char)
+            }
         }
-
-        var password = ""
-        for _ in 0..<passwordLength {
-            let randomIndex = Int.random(in: 0..<characters.count)
-            let char = characters[characters.index(characters.startIndex, offsetBy: randomIndex)]
-            password.append(char)
+        
+       
+        var password = mandatoryCharacters
+        while password.count < passwordLength {
+            if let randomChar = randomCharacter(from: availableCharacters, using: &rng) {
+                password.append(randomChar)
+            }
         }
-
-        return password
+        
+       
+        password.shuffle(using: &rng)
+        
+        return String(password)
     }
 
-    func copyPasswordToClipboard() {
+   
+    func randomCharacter(from string: String, using rng: inout SystemRandomNumberGenerator) -> Character? {
+        guard !string.isEmpty else { return nil }
+        let index = string.index(string.startIndex, offsetBy: Int.random(in: 0..<string.count, using: &rng))
+        return string[index]
+    }
+
+
+    func copyPasswordToMyClipboard() {
         if !lastGeneratedPassword.isEmpty {
             NSPasteboard.general.clearContents()
             NSPasteboard.general.setString(lastGeneratedPassword, forType: .string)
         }
     }
 
-    func copyToClipboard(_ password: String) {
+    func copyToMyClipboard(_ password: String) {
         NSPasteboard.general.clearContents()
         NSPasteboard.general.setString(password, forType: .string)
     }
@@ -109,7 +144,7 @@ struct GenPassView: View {
                     .cornerRadius(10)
 
                     Button(action: {
-                        appState.copyPasswordToClipboard()
+                        appState.copyPasswordToMyClipboard()
                     }) {
                         HStack {
                             Image(systemName: "arrow.right.doc.on.clipboard")
@@ -145,13 +180,14 @@ struct GenPassView: View {
                                 HStack {
                                     
                                     Button(action: {
-                                        appState.copyToClipboard(password)
+                                        appState.copyToMyClipboard(password)
                                     }) {
                                         HStack {
                                             Image(systemName: "arrow.right.doc.on.clipboard")
                                             Text(password)
                                                 .lineLimit(1)
                                                 .truncationMode(.middle)
+                                                .padding(3)
                                         }
                                     }
                                     .cornerRadius(8)
@@ -164,12 +200,14 @@ struct GenPassView: View {
                                     }) {
                                         Text("Delete")
                                             .foregroundColor(.red)
-                                            .font(.caption)
+                                            .font(.system(size: 13))
+                                            .padding(3)
+                                            
                                     }
                                 }
                                 .padding(.vertical, 4)
-                                .background(Color.gray.opacity(0.1))
-                                .cornerRadius(8)
+                              //  .background(Color.gray.opacity(0.1))
+                             //   .cornerRadius(8)
                             }
 
                         }

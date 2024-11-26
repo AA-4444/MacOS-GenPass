@@ -14,8 +14,6 @@ struct SafePassApp: App {
 }
 
 
-
-
 class AppState: ObservableObject {
     @Published var passwordLength: Int = 16
     @Published var includeUppercase: Bool = true
@@ -151,7 +149,7 @@ struct GenPassView: View {
                             Text(appState.lastGeneratedPassword.isEmpty ? "None" : appState.lastGeneratedPassword)
                                 .lineLimit(1)
                                 .truncationMode(.middle)
-                                .frame(maxWidth: .infinity, alignment: .leading) // Ensure text is left-aligned
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
                     .buttonStyle(PlainButtonStyle())
@@ -278,3 +276,5 @@ struct GenPassView: View {
         .frame(width: 300)
     }
 }
+
+//MARK: add macos autofill integration 

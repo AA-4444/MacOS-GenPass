@@ -1,6 +1,7 @@
 
 import SwiftUI
 import AppKit
+import Foundation
 
 @main
 struct SafePassApp: App {
@@ -21,6 +22,14 @@ class AppState: ObservableObject {
     @Published var includeSpecialChars: Bool = true
     @Published var lastGeneratedPassword: String = ""
     @Published var passwordHistory: [String] = []
+//--Test Categories
+//    @Published var passwordCategories: [String: [String]] = [
+//           "Work": [],
+//           "Personal": [],
+//           "Finance": [],
+//           "Games" : []
+//       ]
+//       @Published var selectedCategory: String = "Work"
 
     func generatePassword() {
         let password = generateRandomNicePassword()
@@ -36,6 +45,7 @@ class AppState: ObservableObject {
             }
         }
     }
+    
 
     func generateRandomNicePassword() -> String {
         guard passwordLength > 0 else { return "" }
@@ -86,6 +96,9 @@ class AppState: ObservableObject {
         
         return String(password)
     }
+    
+    
+    
 
    
     func randomCharacter(from string: String, using rng: inout SystemRandomNumberGenerator) -> Character? {
@@ -277,4 +290,4 @@ struct GenPassView: View {
     }
 }
 
-//MARK: add macos autofill integration 
+

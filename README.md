@@ -3,8 +3,9 @@
 
 **GenPass** is a macOS application designed to create secure passwords with fully customizable options. It combines simplicity and security while offering clipboard integration and password history management, allowing you to view and reuse previously generated passwords.
 
-images/1.png
-images/2.png
+![image1](images/1.png)
+![image2](images/2.png)
+
 
 ---
 

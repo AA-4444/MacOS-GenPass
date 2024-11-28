@@ -22,14 +22,6 @@ class AppState: ObservableObject {
     @Published var includeSpecialChars: Bool = true
     @Published var lastGeneratedPassword: String = ""
     @Published var passwordHistory: [String] = []
-//--Test Categories
-//    @Published var passwordCategories: [String: [String]] = [
-//           "Work": [],
-//           "Personal": [],
-//           "Finance": [],
-//           "Games" : []
-//       ]
-//       @Published var selectedCategory: String = "Work"
 
     func generatePassword() {
         let password = generateRandomNicePassword()
@@ -217,8 +209,7 @@ struct GenPassView: View {
                                     }
                                 }
                                 .padding(.vertical, 4)
-                              //  .background(Color.gray.opacity(0.1))
-                             //   .cornerRadius(8)
+                              
                             }
 
                         }
